@@ -1,0 +1,15 @@
+html[data-theme="clinicA"] {
+  --color-bg: #faf9f4;
+  --color-surface: #ffffff;
+  --color-surface-muted: #edf4f0;
+  --color-text: #14201b;
+  --color-muted: #5b675f;
+  --color-border: #d8e2dc;
+  --color-primary: #126b5d;
+  --color-primary-strong: #083f38;
+  --color-primary-soft: #dcefeb;
+  --color-accent: #c77b3f;
+  --color-accent-soft: #f4dfcd;
+  --color-danger: #a94036;
+  --gradient-hero: linear-gradient(132deg, #e8f4ee 0%, #fbf4e7 54%, #f7fbfa 100%);
+}
