@@ -46,7 +46,7 @@ export function ScrollReveal({ children, className = "", stagger = false }: Scro
   }, [stagger]);
 
   return (
-    <div ref={ref} className={`reveal ${className}`.trim()}>
+    <div ref={ref} className={className}>
       {children}
     </div>
   );

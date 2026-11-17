@@ -24,7 +24,12 @@ export function AnimatedCard({ children, className = "" }: AnimatedCardProps) {
   }
 
   return (
-    <article ref={ref} className={`card ${className}`.trim()} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+    <article
+      ref={ref}
+      className={`overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-sm)] ${className}`.trim()}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       {children}
     </article>
   );

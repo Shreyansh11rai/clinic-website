@@ -6,5 +6,11 @@ type CardProps = {
 };
 
 export function Card({ children, className = "" }: CardProps) {
-  return <article className={`card ${className}`.trim()}>{children}</article>;
+  return (
+    <article
+      className={`overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-sm)] ${className}`.trim()}
+    >
+      {children}
+    </article>
+  );
 }

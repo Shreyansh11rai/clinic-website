@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(dentistJsonLd()) }}
         />
         <Header />
-        <main>{children}</main>
+        <main className="min-h-[70vh]">{children}</main>
         <Footer />
         <FloatingActions />
       </body>

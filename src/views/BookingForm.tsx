@@ -37,7 +37,10 @@ export function BookingForm({ services, slots }: BookingFormProps) {
 
   return (
     <>
-      <form className="bookingForm" action={handleSubmit}>
+      <form
+        className="grid gap-4 rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-sm)]"
+        action={handleSubmit}
+      >
         <Select label="Service" name="service" value={serviceSlug} onChange={(event) => setServiceSlug(event.target.value)} required>
           {services.map((service) => (
             <option key={service.slug} value={service.slug}>
@@ -45,10 +48,14 @@ export function BookingForm({ services, slots }: BookingFormProps) {
             </option>
           ))}
         </Select>
-        <div className="slotGrid" aria-label="Available dates">
+        <div className="flex flex-wrap gap-2" aria-label="Available dates">
           {slots.map((slot) => (
             <button
-              className={slot.date === date ? "slotButton isActive" : "slotButton"}
+              className={`rounded-full border px-[0.95rem] py-[0.7rem] text-[var(--color-text)] ${
+                slot.date === date
+                  ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-white"
+                  : "border-[var(--color-border)] bg-[var(--color-surface)]"
+              }`}
               key={slot.date}
               type="button"
               onClick={() => {
@@ -60,14 +67,23 @@ export function BookingForm({ services, slots }: BookingFormProps) {
             </button>
           ))}
         </div>
-        <div className="slotGrid" aria-label="Available times">
+        <div className="flex flex-wrap gap-2" aria-label="Available times">
           {activeTimes.map((slotTime) => (
-            <button className={slotTime === time ? "slotButton isActive" : "slotButton"} key={slotTime} type="button" onClick={() => setTime(slotTime)}>
+            <button
+              className={`rounded-full border px-[0.95rem] py-[0.7rem] text-[var(--color-text)] ${
+                slotTime === time
+                  ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-white"
+                  : "border-[var(--color-border)] bg-[var(--color-surface)]"
+              }`}
+              key={slotTime}
+              type="button"
+              onClick={() => setTime(slotTime)}
+            >
               {slotTime}
             </button>
           ))}
         </div>
-        <div className="formGrid">
+        <div className="grid grid-cols-2 gap-4 max-[769px]:grid-cols-1">
           <Input label="Full name" name="name" autoComplete="name" required />
           <Input label="Phone" name="phone" type="tel" autoComplete="tel" required />
           <Input label="Email" name="email" type="email" autoComplete="email" required />
@@ -76,7 +92,9 @@ export function BookingForm({ services, slots }: BookingFormProps) {
         <Button type="submit">Request appointment</Button>
       </form>
       <Modal open={open} title="Appointment request received" onClose={() => setOpen(false)}>
-        <p>The booking payload has been logged and this template is ready for a future API submission.</p>
+        <p className="text-[var(--color-muted)]">
+          The booking payload has been logged and this template is ready for a future API submission.
+        </p>
       </Modal>
     </>
   );
