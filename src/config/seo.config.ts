@@ -9,7 +9,12 @@ export const defaultSeo: SeoEntry = {
   description:
     "Book gentle preventive, cosmetic, and emergency dental care with a clinic designed for clear answers and comfortable visits.",
   canonical: "/",
-  keywords: ["dentist", "family dentistry", "cosmetic dentist", "dental clinic"],
+  keywords: [
+    "dentist",
+    "family dentistry",
+    "cosmetic dentist",
+    "dental clinic",
+  ],
   ogImage: defaultOgImage,
 };
 
@@ -20,47 +25,60 @@ export const seoMap: Record<string, SeoEntry> = {
     description:
       "Explore preventive, restorative, cosmetic, and urgent dental services with transparent treatment guidance.",
     canonical: "/services",
-    keywords: ["dental services", "teeth cleaning", "invisalign", "dental implants"],
+    keywords: [
+      "dental services",
+      "teeth cleaning",
+      "invisalign",
+      "dental implants",
+    ],
     ogImage: defaultOgImage,
   },
   "/blog": {
     title: `Dental Care Blog | ${brandConfig.clinicName}`,
-    description: "Plain-language dental care articles from the Brightline clinical team.",
+    description:
+      "Plain-language dental care articles from the Doomsphere clinical team.",
     canonical: "/blog",
     keywords: ["dental tips", "oral health", "teeth care"],
     ogImage: defaultOgImage,
   },
   "/shop": {
     title: `Oral Care Shop | ${brandConfig.clinicName}`,
-    description: "Curated at-home oral care essentials recommended by the clinic team.",
+    description:
+      "Curated at-home oral care essentials recommended by the clinic team.",
     canonical: "/shop",
     keywords: ["oral care products", "dental shop", "toothbrush"],
     ogImage: defaultOgImage,
   },
   "/faqs": {
     title: `Dental FAQs | ${brandConfig.clinicName}`,
-    description: "Answers to common appointment, insurance, treatment, and comfort questions.",
+    description:
+      "Answers to common appointment, insurance, treatment, and comfort questions.",
     canonical: "/faqs",
     keywords: ["dental faqs", "dentist questions", "clinic insurance"],
     ogImage: defaultOgImage,
   },
   "/booking": {
     title: `Book an Appointment | ${brandConfig.clinicName}`,
-    description: "Choose a service, date, and time for your next dental appointment.",
+    description:
+      "Choose a service, date, and time for your next dental appointment.",
     canonical: "/booking",
     keywords: ["book dentist", "dental appointment", "dentist near me"],
     ogImage: defaultOgImage,
   },
   "/contact": {
     title: `Contact | ${brandConfig.clinicName}`,
-    description: "Call, message, or visit Brightline Dental Studio for dental care support.",
+    description:
+      "Call, message, or visit Doomsphere Dental Studio for dental care support.",
     canonical: "/contact",
     keywords: ["contact dentist", "dental clinic phone", "dentist location"],
     ogImage: defaultOgImage,
   },
 };
 
-export function buildMetadata(route: string, override?: Partial<SeoEntry>): Metadata {
+export function buildMetadata(
+  route: string,
+  override?: Partial<SeoEntry>,
+): Metadata {
   const seo = { ...(seoMap[route] ?? defaultSeo), ...override };
   const canonical = new URL(seo.canonical, brandConfig.siteUrl);
   const imageUrl = new URL(seo.ogImage, brandConfig.siteUrl);

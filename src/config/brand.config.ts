@@ -1,16 +1,16 @@
 export const brandConfig = {
-  clinicName: "Brightline Dental Clinic",
-  legalName: "Brightline Dental Clinic LLC",
+  clinicName: " Dental Clinic",
+  legalName: "Doomsphere Dental Clinic LLC",
   tagline: "Modern family dentistry built around calm, clear care.",
   themeKey: "clinicA",
-  siteUrl: "https://brightline-dental.example",
-  logoText: "Brightline",
+  siteUrl: "https://Doomsphere-dental.example",
+  logoText: "Doomsphere",
   phone: "+1-415-555-0138",
   phoneDisplay: "(415) 555-0138",
-  email: "care@brightline-dental.example",
+  email: "care@Doomsphere-dental.example",
   whatsappNumber: "14155550138",
   whatsappMessage:
-    "Hi Brightline Dental Clinic, I would like to book an appointment.",
+    "Hi Doomsphere Dental Clinic, I would like to book an appointment.",
   address: {
     street: "218 Market Street",
     city: "San Francisco",

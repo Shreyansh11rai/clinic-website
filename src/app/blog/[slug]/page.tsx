@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return buildMetadata(`/blog/${slug}`, {
-    title: `${post.title} | Brightline Dental Studio`,
+    title: `${post.title} | Doomsphere Dental Studio`,
     description: post.excerpt,
     canonical: `/blog/${slug}`,
     keywords: ["dental care", "oral health", post.title],

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ProductPageProps) {
   }
 
   return buildMetadata(`/shop/${slug}`, {
-    title: `${product.title} | Brightline Dental Studio`,
+    title: `${product.title} | Doomsphere Dental Studio`,
     description: product.summary,
     canonical: `/shop/${slug}`,
     keywords: ["oral care", "dental product", product.title],

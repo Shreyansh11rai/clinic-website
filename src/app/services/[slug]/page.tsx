@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ServicePageProps) {
   }
 
   return buildMetadata(`/services/${slug}`, {
-    title: `${service.title} | Brightline Dental Studio`,
+    title: `${service.title} | Doomsphere Dental Studio`,
     description: service.summary,
     canonical: `/services/${slug}`,
     keywords: [service.title, "dental service", "dentist"],
